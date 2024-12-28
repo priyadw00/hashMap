@@ -332,7 +332,6 @@ class HashTable:
         self.size = self.size *2 
 
         old_arr = self.arr
-        #print("old arr:", old_arr)
 
         self.arr = [None] * self.size 
         #reset list counter 
@@ -438,14 +437,12 @@ def profilerMain():
         initial_num_to_add = 999
 
         # Get start Time.
-     
-
-        #### Start of code you want to profile ####
     
-    ###experiment one and two (changed intial bucket size between expirments )
+    
+    ### Code for experiment one and two ### 
 
         hash_table = HashTable(initial_bucket_size, hash_func_to_test)
-        with open('hwk4-people.csv') as csv_file:    
+        with open('hashMap/hwk4-people.csv') as csv_file:    
             csv_reader = csv.reader(csv_file, delimiter=',')
             header = csv_reader.__next__()
             #rehashes = 0 
@@ -459,7 +456,7 @@ def profilerMain():
                     isOver = hash_table.isOverLoadFactor()
 
 
-        ### experiment 3 
+        ### code for experiment 3 ### 
 
         start_time_create =  time.time()  
 
